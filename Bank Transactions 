@@ -1,0 +1,47 @@
+//Bank Transactions 
+#include<stdio.h>
+int main()
+{
+  int n,bal,wd,dep;
+  printf("Enter an option");
+  printf("\nWhere \n 1.Balance Inquire\n 2.Cash Withdrawl\n 3.Cash Deposit\n");
+  scanf("%d",&n);
+  printf("\nEnter the current Balance");
+  scanf("%d",&bal);
+  switch(n)
+  {
+    case 1:
+    {
+      printf("\nBalance Inquiry");
+      printf("\nCurrent Balance=₹%d",bal);
+    }
+    break;
+    case 2:
+    { 
+      printf("\nCash Withdrawl");
+      printf("\nEnter the amount to be withdrawn");
+      scanf("%d",&wd);
+      if(wd<=bal)
+      {
+        printf("\nTransaction Sucessful");
+        bal=bal-wd;
+        printf("\nRemaining Balance=₹%d",bal);
+      }
+      else
+        printf("\nInsufficient Balance");
+    }
+    break;
+    case 3:
+    {
+      printf("\nCash Deposit");
+      printf("\nEnter the cash to be depositted");
+      scanf("%d",&dep);
+      printf("\nDeposit Sucessful");
+      bal=bal+dep;
+      printf("\nCurrent Balance=₹%d",bal);
+    }
+    break;
+    default:
+    printf("Invalid Option");
+  }
+}
